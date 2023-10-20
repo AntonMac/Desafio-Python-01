@@ -69,6 +69,15 @@ def calcula_media(data_frame):
         
         print(F' A média de todos os estudantes é: {media_estudante/len(data_frame)}')
 
+def carregar_arquivo():
+    arquivo = Path('registros.csv')
+    if arquivo.exists():
+        temp1 = pd.read_csv('registros.csv')
+    else:
+        print("\nArquivo não encontrado, dados não carregados\n")
+        temp1 = pd.DataFrame(modelo_registro()).drop(0)
+    return temp1
+
 def main():
     dados_geral = pd.DataFrame(modelo_registro()).drop(0)
     
@@ -95,7 +104,11 @@ def main():
             dados_geral.to_csv('registros.csv', index=False)
             print("\nDados Salvos no arquivo registros.csv\n")
         elif opcao == '6':
-            break
+            temp2 = carregar_arquivo()
+            if not temp2.empty:
+                print("\nArquivo Carregado\n")
+                dados_geral = pd.concat([temp2.astype(dados_geral.dtypes), dados_geral.astype(temp2.dtypes)], ignore_index= True)
+            
         elif opcao == '7':
             print("Sistema Finalizado")
             break
