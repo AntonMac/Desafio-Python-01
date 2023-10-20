@@ -6,7 +6,7 @@ b)	Foram os básicos apenas, fui atualizando o arquivo dentro do repositório lo
   
         ii.	git add .
   
-        iii.	git commit -m “msg”
+        iii. git commit -m “msg”
   
         iv.	git push origin nome1
 
