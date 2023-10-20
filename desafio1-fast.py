@@ -49,6 +49,15 @@ def adiciona_registro():
     n1, n2, n3 = notas.split()
     return pd.DataFrame(modelo_registro(nome, idnum, float(n1), float(n2), float(n3)))
 
+def procura_estudante(data_frame):
+    idnum = entrada_id()
+    proc = data_frame['Id'] == idnum
+    registro = data_frame[proc]
+    if registro.empty:
+        print(F'Registo com o Id {idnum} não foi encontrado')
+    else:
+        print("Id encontrado:")
+        print(registro.to_string(index=False, col_space=10))
 
 def main():
     dados_geral = pd.DataFrame(modelo_registro()).drop(0)
@@ -65,7 +74,9 @@ def main():
             print(dados_geral.to_string(col_space=10))
             print("\n=====================================================================\n")
         elif opcao == '3':
-            break
+            print("\n=====================================================================\n")
+            procura_estudante(dados_geral)
+            print("\n=====================================================================\n")
         elif opcao == '4':
             break
         elif opcao == '5':
