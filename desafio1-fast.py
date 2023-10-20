@@ -59,6 +59,16 @@ def procura_estudante(data_frame):
         print("Id encontrado:")
         print(registro.to_string(index=False, col_space=10))
 
+def calcula_media(data_frame):
+    media_estudante = 0.0
+    if data_frame.empty:
+        print("Não existe alunos registrados!")
+    else:
+        for i in range(0,len(data_frame)):
+            media_estudante += ((data_frame.at[i, 'Nota1'] + data_frame.at[i, 'Nota2'] + data_frame.at[i, 'Nota3'])/3)
+        
+        print(F' A média de todos os estudantes é: {media_estudante/len(data_frame)}')
+
 def main():
     dados_geral = pd.DataFrame(modelo_registro()).drop(0)
     
@@ -78,7 +88,9 @@ def main():
             procura_estudante(dados_geral)
             print("\n=====================================================================\n")
         elif opcao == '4':
-            break
+            print("\n=====================================================================\n")
+            calcula_media(dados_geral)
+            print("\n=====================================================================\n")
         elif opcao == '5':
             break
         elif opcao == '6':
