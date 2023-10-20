@@ -61,7 +61,9 @@ def main():
             dados_geral = pd.concat([dados_geral.astype(temp.dtypes), temp ], ignore_index= True)
             
         elif opcao == '2':
-           break
+            print("\n=====================================================================\n")
+            print(dados_geral.to_string(col_space=10))
+            print("\n=====================================================================\n")
         elif opcao == '3':
             break
         elif opcao == '4':
