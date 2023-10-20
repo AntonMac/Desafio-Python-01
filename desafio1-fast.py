@@ -92,7 +92,8 @@ def main():
             calcula_media(dados_geral)
             print("\n=====================================================================\n")
         elif opcao == '5':
-            break
+            dados_geral.to_csv('registros.csv', index=False)
+            print("\nDados Salvos no arquivo registros.csv\n")
         elif opcao == '6':
             break
         elif opcao == '7':
