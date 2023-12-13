@@ -1,4 +1,4 @@
-#Desafio 1 - Fundamentos de Python aplicado a dados
+Desafio 1 - Fundamentos de Python aplicado a dados
 
 a. Forneça detalhes da solução do desafio. Como você realizou?
 
