@@ -1,3 +1,5 @@
+#Desafio 1 - Fundamentos de Python aplicado a dados
+
 a. Forneça detalhes da solução do desafio. Como você realizou?
 
 b. Forneça detalhes sobre os comandos utilizados, como git init, git remote add origin, git add, git commit e git push, git checkout.
